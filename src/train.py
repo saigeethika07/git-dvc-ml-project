@@ -30,7 +30,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # Create Random Forest model
 model = RandomForestClassifier(
-    n_estimators=100,
+    n_estimators=200,
     random_state=42
 )
 
@@ -44,10 +44,11 @@ y_pred = model.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 
 print("Random Forest Model")
-print("Number of trees:", 100)
+print("Number of trees:", 200)
 print("Accuracy:", accuracy)
 
 # Save model
 joblib.dump(model, "models/random_forest.pkl")
 
 print("Model saved to models/random_forest.pkl")
+
