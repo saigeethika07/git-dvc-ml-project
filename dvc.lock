@@ -1,0 +1,14 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: params.yaml -o models/random_forest.pkl -M results/metrics.json py 
+      src/train.py
+    deps:
+    - path: data/Iris.csv
+      hash: md5
+      md5: 3aefa8fb998aace52fe3d8411dfbfc63
+      size: 5291
+    - path: src/train.py
+      hash: md5
+      md5: 0fde432aae906ab44a9263c1bba9b121
+      size: 1518
