@@ -1,7 +1,14 @@
 stages:
   train:
-    cmd: params.yaml -o models/random_forest.pkl -M results/metrics.json py 
-      src/train.py
+    cmd: py src/train.py
     deps:
-    - data/Iris.csv
-    - src/train.py
+      - data/Iris.csv
+      - src/train.py
+    params:
+      - train.n_estimators
+      - train.random_state
+      - train.test_size
+    outs:
+      - models/random_forest.pkl
+    metrics:
+      - results/metrics.json
